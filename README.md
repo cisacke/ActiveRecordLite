@@ -60,6 +60,8 @@ def update
 
 ### has many, belongs_to
 
+<img src="./docs/has_many-belongs_to.png"/>
+
 ### has_one_through
 ```
   def has_one_through(name, through_name, source_name)
