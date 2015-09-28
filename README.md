@@ -58,8 +58,8 @@ def update
 
 ## Associations
 
-<!-- has many -->
-<!-- belongs_to -->
+### has many, belongs_to
+
 ### has_one_through
 ```
   def has_one_through(name, through_name, source_name)
