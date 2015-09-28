@@ -1,4 +1,4 @@
-require_relative '03_associatable'
+require_relative 'associatable'
 require 'active_support/inflector'
 
 # Phase IV
