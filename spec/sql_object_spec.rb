@@ -129,7 +129,6 @@ describe SQLObject do
     end
 
     it '#insert creates record with proper values' do
-      # pull the cat again
       cat2 = Cat.find(cat.id)
 
       expect(cat2.name).to eq('Gizmo')
@@ -145,7 +144,6 @@ describe SQLObject do
       human.lname = 'von Rubens'
       human.update
 
-      # pull the human again
       human = Human.find(2)
       expect(human.fname).to eq('Matthew')
       expect(human.lname).to eq('von Rubens')
