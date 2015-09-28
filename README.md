@@ -2,9 +2,19 @@
 
 An ORM based on the core features of ActiveRecord. It uses the metaprogramming ability of Ruby to create an extendable SQLObject class, which mimics some of the functionality available with ActiveRecord::Base.
 
-# Core Features
+# Usage
 
-<!-- Model Objects -->
+Extend the SQLObject Class. Use self.table_name=(table_name) for a customized table name. Calling self.finalize! automatically adds getter and setter methods for each of the table columns. Available factory methods, instance methods, and instance associations are highlighted below.
+```
+class Human < SQLObject
+    self.table_name = "humans"
+    
+    self.finalize!
+end
+```
+
+
+# Core Features
 
 ## Queries
 
@@ -22,7 +32,7 @@ def where(params)
       #{where_line}
     SQL
     self.parse_all(results)
-  end
+end
 
 ```
 
@@ -38,7 +48,7 @@ def insert
       (#{question_marks})
     SQL
     self.id = DBConnection.last_insert_row_id
-  end
+ end
 ```
 
 ### Record.update()
@@ -53,7 +63,7 @@ def update
     WHERE
       id = ?
     SQL
-  end
+ end
 ```
 
 ## Associations
